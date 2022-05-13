@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+// testing purposes
+import Test from "./Components/Test.js";
+
+function App(props) {
+  const testProp = props.children;
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +20,10 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a><br/>
+        <h4>TESTING...</h4>
+        {testProp}
+        <Test id={2} />
       </header>
     </div>
   );

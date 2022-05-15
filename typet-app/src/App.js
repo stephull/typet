@@ -3,9 +3,16 @@ import './App.css';
 
 // testing purposes
 import Test from "./Components/Test.js";
+import Keyboard from "./Components/Keyboard.js";
 
-import {useState} from 'react';
+import { useState } from 'react';
 import axios from 'axios';
+
+const keyboardStyle = {
+  backgroundColor: 'lightblue',
+  borderRadius: `${0.5}em`,
+  border: '1px solid black'
+}
 
 function App(props) {
   const testProp = props.children;
@@ -46,7 +53,9 @@ function App(props) {
           rel="noopener noreferrer"
         >
           Learn React
-        </a><br/>
+        </a>
+        
+        <br/>
         <h4>TESTING...</h4>
         {testProp}
         <Test id={2} />
@@ -61,7 +70,11 @@ function App(props) {
             <small>{profileData.profile_type}</small><br/>
             <small>{profileData.profile_summary}</small>
           </div>
-        }
+        }<br/>
+        <h4>Keyboard Test</h4><br/>
+        <Keyboard style={keyboardStyle}/>
+        <br/>
+
       </header>
     </div>
   );

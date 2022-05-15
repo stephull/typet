@@ -5,8 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // for testing purposes, show components on the app
-//import Keyboard from "./Components/Keyboard.js";
-//import Profile from "./Components/Profile.js";
 import Test from "./Components/Test.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

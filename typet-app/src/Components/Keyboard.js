@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import KeyRow from "./KeyRow.js";
 
-function Keyboard() {
+const rowStyles = {
+    display: "row",
+    backgroundColor: 'purple'
+}
+
+function getKeyRows() {
     const keyrows = [];
-    for (let i = 1; i <= 5; i++) {
-        keyrows.push(<KeyRow id={i}/>)
+    for (let i = 0; i < 5; i++) {
+        keyrows.push(<KeyRow style={rowStyles} id={i+1}/>)
     }
-    return (
-        <React.Component>
-            {keyrows}
-        </React.Component>
-    );
+    return keyrows;
+}
+
+class Keyboard extends Component {
+    render() {
+        return (
+            <>
+                {getKeyRows()}
+            </>
+        );
+    }
 }
 
 export default Keyboard;

@@ -1,21 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-
-// testing purposes
-import Test from "./Components/Test.js";
-import Keyboard from "./Components/Keyboard.js";
-
 import { useState } from 'react';
 import axios from 'axios';
-
-const keyboardStyle = {
-  backgroundColor: 'lightblue',
-  borderRadius: `${0.5}em`,
-  border: '1px solid black'
-}
+import Test from "./Components/Test.js";
+import Keyboard from "./Components/Keyboard.js";
+import "./Components/Keyboard.css"
 
 function App(props) {
-  const testProp = props.children;
   const [profileData, setData] = useState(null);
 
   function getData() {
@@ -46,18 +37,9 @@ function App(props) {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         
-        <br/>
         <h4>TESTING...</h4>
-        {testProp}
+        {props.children}
         <Test id={2} />
         <br/>
         <div style={{
@@ -72,7 +54,7 @@ function App(props) {
           </div>
         }<br/>
         <h4>Keyboard Test</h4><br/>
-        <Keyboard style={keyboardStyle}/>
+        <Keyboard />
         <br/>
 
       </header>

@@ -1,10 +1,10 @@
 /**
- * Profile: board for user information
+ *  FileInfo: show information on file upload
  */
 
 import React, {Component} from 'react';
 
-class Profile extends Component {
+class FileInfo extends Component {
     render() {
         return (
             <>
@@ -13,4 +13,4 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
+export default FileInfo;

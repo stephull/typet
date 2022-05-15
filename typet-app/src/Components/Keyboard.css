@@ -1,0 +1,10 @@
+.Keyboard {
+    background-color: lightblue;
+    border-radius: 0.5em;
+    border: 1px solid black;
+}
+
+.KeyRow {
+    display: flex;
+    flex-direction: row;
+}

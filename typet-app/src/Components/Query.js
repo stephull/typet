@@ -1,14 +1,20 @@
-import React from 'react';
+/**
+ *  Query: selected random words (TBD)
+ */
 
-function Query(props) {
-    const {id} = props;
-    // use ID to retrieve link to words
-    // (also depends on id/class name)
-    return (
-        <React.Component>
-            
-        </React.Component>
-    );
+import React, {Component} from 'react';
+
+class Query extends Component {
+    constructor(props) {
+        super(props);
+        this.seed = props.seed;
+    }
+    render() {
+        return(
+            <>
+            </>
+        );
+    }
 }
 
 export default Query;

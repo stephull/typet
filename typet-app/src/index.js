@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-// for testing purposes, show components on the app
 import Test from "./Components/Test.js";
+
+// for testing the keyboard separately 
+import Keyboard from "./Components/Keyboard.js";
+import "./Components/Keyboard.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +15,7 @@ root.render(
     <App>
       <Test id={1}/>
     </App>
+    <Keyboard /> 
   </React.StrictMode>
 );
 

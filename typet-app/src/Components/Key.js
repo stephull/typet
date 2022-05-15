@@ -1,4 +1,9 @@
+/**
+ *  Key: key button for Keyboard
+ */
+
 import React, {Component} from 'react';
+import "./Keyboard.css"
 
 const FILL = 2;
 
@@ -15,7 +20,7 @@ const converting = new Map([
     ["slash", "/"],
     ["filler1", ""],
     ["filler2", ""],
-    ["backspace", "<<"]
+    ["backspace", "<<<"]
 ]);
 
 function getKey(val) {

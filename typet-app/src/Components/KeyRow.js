@@ -1,12 +1,16 @@
+/**
+ *  KeyRow: key row for keyboard
+ */
+
 import React, {Component} from 'react';
 import Key from "./Key.js";
 
-const stop = "@";
+const STOP = "@";
 
 function assembleRow(query, sp) {
     const elements = [];
     for (let i = 0; i < query.length; i++) {
-        var val = (query[i] === stop) ? sp.shift() : query[i];
+        var val = (query[i] === STOP) ? sp.shift() : query[i];
         elements.push(
             <Key id={val} />
         );
@@ -15,8 +19,7 @@ function assembleRow(query, sp) {
 }
 
 function createRowByQuery(id) {
-    let query = "";
-    let specialties = [];
+    let query = "", specialties = [];
     switch(id) {
         case 1:
             query = "@1234567890-@@"
@@ -40,15 +43,12 @@ function createRowByQuery(id) {
             break;
         default: break;
     }
-    let component = assembleRow(query, specialties);
-    return component;
+    return assembleRow(query, specialties);
 }
 
 function createRow(id) {
     let r = createRowByQuery(id);
-    return (r !== null) ? r : (
-        <small>UNAVAILABLE</small>
-    );
+    return (r !== null) ? r : "unavailable";
 }
 
 class KeyRow extends Component {

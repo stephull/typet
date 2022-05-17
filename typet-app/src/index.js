@@ -5,17 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Test from "./Components/Test.js";
 
-// for testing the keyboard separately 
-import Keyboard from "./Components/Keyboard.js";
-import "./Components/Keyboard.css";
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App>
       <Test id={1}/>
     </App>
-    <Keyboard /> 
   </React.StrictMode>
 );
 

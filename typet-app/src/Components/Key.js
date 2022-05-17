@@ -2,91 +2,62 @@
  *  Key: key button for Keyboard
  */
 
-import React, {Component} from 'react';
-import "./Keyboard.css"
+import React from 'react';
+import "./Keyboard.css";
 
-const FILL = 2;
+/*const shifts = new Map([
+    
+]);*/
 
-const converting = new Map([
-    ["tilde", "`"],
-    ["equals", "="],
-    ["left-bracket", "["],
-    ["right-bracket", "]"],
+const converts = new Map([
+    ["tilde", '`'],
+    ["equal", "+"],
+    ["backspace", "<<"],
+    ["tab", "TAB"],
+    ["left-bracket", '['],
+    ["right-bracket", ']'],
     ["backslash", "\\"],
+    ["caps", "CAPS"],
     ["semicolon", ";"],
-    ["quote", "'"],
+    ["quote", '\''],
+    ["enter", "ENTER"],
+    ["shift", "SHIFT"],
     ["comma", ","],
     ["dot", "."],
     ["slash", "/"],
-    ["filler1", ""],
-    ["filler2", ""],
-    ["backspace", "<<<"]
+    ["space", "SPACEBAR"]
 ]);
+function displayNew(val) {
+    return converts.get(val);
+}
 
-function getKey(val) {
-    let keyWidth;
-    switch(val) {
-        case "filler1":
-            keyWidth = 4; break;
-        case "filler2":
-        case "space":
-            keyWidth = 5; break;
-        case "shift":
-            keyWidth = 2.2; break;
-        case "caps":
-        case "enter":
-            keyWidth = 1.5; break;
-        case "backspace":
-            keyWidth = 1.4; break;
-        case "tab":
-        case "backslash":
-            keyWidth = 1.2; break;
-        default:
-            keyWidth = 1; break;
+function decodeCode(code) {
+    return code.split('-').map((item) => parseInt(item, 10));
+}
+
+function Key({ children, id = children, code, className = "normal" }) {
+    let [width, row, pos] = decodeCode(code);
+    const styles = {
+        backgroundColor: (className === "filler") ? "gray" : "white",
+        border: '1px solid gray',
+        borderRadius: '0.15em',
+        padding: '0.25em',
+        display: 'block',
+        gridArea: `${row} / ${pos} / ${row + 1} / ${pos + width}`
     }
-
-    if (converting.has(val)) {
-        val = converting.get(val);
-    }
-
-    const keyStyle = {
-        height: `${FILL}em`,
-        width: `${keyWidth * FILL}em`,
+    const textStyles = {
         color: "black",
-        backgroundColor: "white",
-        borderRadius: `${0.5}em`,
-        margin: `${-0.1}em`
+        fontSize: 'smaller',
+        margin: '0.15em 0.25em',
+        userSelect: false
     }
-    const keyTextStyle = {
-        alignItems: "center",
-        fontWeight: 'bold',
-        color: 'blue'
-    }
-
     return (
-        <div style={keyStyle}>
-            <p style={keyTextStyle}>{val}</p>
+        <div style={styles} className={`${className} key`} id={id}
+            onClick={() => console.log(children)}>
+                <p style={textStyles}>
+                    {(converts.has(id)) ? displayNew(id) : children}
+                </p>
         </div>
     );
 }
-
-class Key extends Component {
-    constructor(props) {
-        super(props);
-        this.id = props.id;
-        this.className = props.className;
-    }
-    render() {
-        return (
-            <>
-                {getKey(this.id)}
-            </>
-        );
-    }
-}
-
-Key.defaultProps = {
-    className: 'default'
-};
-
 export default Key;

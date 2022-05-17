@@ -1,27 +1,7 @@
-/**
- *  Keyboard: main keyboard layout on screen, for interaction
- */
-
-import React, { Component } from 'react';
-import KeyRow from "./KeyRow.js";
+import React from 'react';
 import "./Keyboard.css";
 
-function getKeyRows() {
-    const keyrows = [];
-    for (let i = 0; i < 5; i++) {
-        keyrows.push(<KeyRow id={i+1}/>)
-    }
-    return keyrows;
+function Keyboard({children}) {
+    return <div className="keyboard">{children}</div>
 }
-
-class Keyboard extends Component {
-    render() {
-        return (
-            <>
-                {getKeyRows()}
-            </>
-        );
-    }
-}
-
 export default Keyboard;

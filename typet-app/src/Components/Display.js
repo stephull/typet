@@ -3,10 +3,11 @@
  */
 
 import React, {Component} from 'react';
-import random from Math;
-import MAX_VALUE from Number;
+import Query from "./Query.js";
+import "./styles/Display.css";
 
-let rand = random() * MAX_VALUE;
+let rand = Math.floor(Math.random() * 65536);
+if (rand < 10000) rand += 10000;
 
 class Display extends Component {
     constructor(props) {

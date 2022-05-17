@@ -2,14 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import axios from 'axios';
-
-// new imports
-import Test from "./Components/Test.js";
+import HeaderMenu from "./Components/HeaderMenu.js";
 import Keyboard from "./Components/Keyboard.js";
 import Key from "./Components/Key.js";
-import "./Components/Keyboard.css"
+import TypeArea from "./Components/TypeArea.js";
+import Display from "./Components/Display.js";
+import Scoreboard from "./Components/Scoreboard.js";
 
-function App(props) {
+function App() {
   const [profileData, setData] = useState(null);
 
   function getData() {
@@ -36,18 +36,24 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
+        <HeaderMenu />
         <img src={logo} className="App-logo" alt="logo" /><br/>
-        {props.children}
-        <Test id={2} /><br/>
         {(getData() || profileData) &&
-          <div>
+          <div style={{
+            backgroundColor: 'azure',
+            borderRadius: '2em',
+            border: '5px solid black',
+            color: 'black'
+          }}>
             <small><b>{profileData.profile_name}</b>{`  (${profileData.profile_id})`}</small><br/>
             <small>{profileData.profile_type}</small><br/>
             <small>{profileData.profile_summary}</small><br/>
             <span>If you're seeing this, it means the backend works :-)</span>
           </div>
         }<br/>
-        <Keyboard className="keyboard">
+        <Display />
+        <TypeArea />
+        <Keyboard>
             <Key code="1-1-1" id="tilde" />
             <Key code="1-1-2">1</Key>
             <Key code="1-1-3">2</Key>
@@ -105,6 +111,7 @@ function App(props) {
             <Key code="8-5-4" className="special" id="space" />
             <Key code="3-5-12" className="filler"/>
         </Keyboard><br/>
+        <Scoreboard />
       </header>
     </div>
   );

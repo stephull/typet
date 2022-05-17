@@ -1,5 +1,9 @@
+/**
+ *  Keyboard
+ */
+
 import React from 'react';
-import "./Keyboard.css";
+import "./styles/Keyboard.css";
 
 function Keyboard({children}) {
     return <div className="keyboard">{children}</div>

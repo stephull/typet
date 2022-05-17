@@ -12,6 +12,8 @@ class Query extends Component {
     render() {
         return(
             <>
+                <span>Test text goes here, hello!</span>
+                <small>Seed: {this.seed}</small>
             </>
         );
     }

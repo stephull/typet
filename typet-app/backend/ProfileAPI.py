@@ -1,6 +1,8 @@
 from flask import Blueprint
 profile_api = Blueprint('profile_api', __name__)
 
+import random
+
 @profile_api.route("/profile")
 def profile():
     data = {

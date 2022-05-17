@@ -8,7 +8,7 @@ class Scoreboard extends Component {
     render() {
         return(
             <>
-                
+                <span>Scoreboard</span>
             </>
         );
     }

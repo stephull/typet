@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import "./Keyboard.css";
+import "./styles/Keyboard.css";
 
 /*const shifts = new Map([
     

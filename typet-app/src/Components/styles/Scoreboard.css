@@ -1,0 +1,32 @@
+.scoreboard {
+    background-color: white;
+    color: black;
+    height: fit-content;
+    width: 600px;
+    margin-bottom: 2em;
+    border-radius: 1em;
+}
+
+.score-head {
+    background-color: cornflowerblue;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-head ul {
+    list-style-type: none; 
+    display: flex;
+    flex-direction: row;
+}
+
+.score-head ul li {
+    padding: 0 1em;
+}
+
+.score-element {
+    padding: 1em;
+    border: 1px solid gray;
+    margin: 1em;
+    border-radius: 1em;
+}

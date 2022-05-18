@@ -1,22 +1,41 @@
 /**
- *  Query: selected random words (TBD)
+ *  Query: selected random words
  */
 
-import React, {Component} from 'react';
+import React, { useState } from 'react';
+import "./styles/QueryDisplay.css";
+import axios from 'axios';
 
-class Query extends Component {
-    constructor(props) {
-        super(props);
-        this.seed = props.seed;
+export default function Query({seed}) {
+    const [wordData, setData] = useState(null);
+
+    function getWords() {
+        axios({
+            method: "GET",
+            url: "/words",
+        })
+        .then((response) => {
+            const res = response.data;
+            setData({
+                word_data: res.words,
+            })
+        })
+        .catch((err) => {
+            if (err.response) {
+                console.log(`${err.response}\n${err.response.status}\n${err.response.headers}`)
+            }
+        })
     }
-    render() {
-        return(
-            <>
-                <span>Test text goes here, hello!</span>
-                <small>Seed: {this.seed}</small>
-            </>
-        );
-    }
+
+    return(
+        <>
+            {
+                (getWords() || wordData) &&
+                <span className="generatedQuery">
+                    {wordData.word_data}
+                </span>
+            }
+            <br/><small><b>Seed: {seed}</b></small>
+        </>
+    );
 }
-
-export default Query;

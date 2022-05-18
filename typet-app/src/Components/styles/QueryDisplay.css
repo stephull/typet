@@ -1,0 +1,7 @@
+.queryDisplay {
+    height: fit-content;
+    width: 600px;
+    border: 2px solid gray;
+    background-color: #e6e69e;
+    color: black;
+}

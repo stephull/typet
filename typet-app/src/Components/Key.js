@@ -7,7 +7,13 @@ import "./styles/Keyboard.css";
 
 /*const shifts = new Map([
     
-]);*/
+]);
+function changeFromShift(val) {
+    if (SHIFT WAS CLICKED OR PRESSED) {
+        return Object.keys(shifts).find((key) => shifts[key] === val)
+    }
+    return shifts.get(val);
+}*/
 
 const converts = new Map([
     ["tilde", '`'],
@@ -47,7 +53,7 @@ function Key({ children, id = children, code, className = "normal" }) {
     }
     const textStyles = {
         color: "black",
-        fontSize: 'smaller',
+        fontSize: 'small',
         margin: '0.15em 0.25em',
         userSelect: false
     }

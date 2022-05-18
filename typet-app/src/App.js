@@ -9,7 +9,7 @@ import TypeArea from "./Components/TypeArea.js";
 import Display from "./Components/Display.js";
 import Scoreboard from "./Components/Scoreboard.js";
 
-function App() {
+export default function App() {
   const [profileData, setData] = useState(null);
 
   function getData() {
@@ -37,7 +37,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <HeaderMenu />
-        <img src={logo} className="App-logo" alt="logo" /><br/>
+        
         {(getData() || profileData) &&
           <div style={{
             backgroundColor: 'azure',
@@ -45,12 +45,22 @@ function App() {
             border: '5px solid black',
             color: 'black'
           }}>
-            <small><b>{profileData.profile_name}</b>{`  (${profileData.profile_id})`}</small><br/>
-            <small>{profileData.profile_type}</small><br/>
+            <div style={{
+              display: 'flex', flexDirection: 'row'
+            }}>
+              <div>
+                <img src={logo} className="App-logo" alt="logo" /><br/>
+              </div>
+              <div>
+                <small><b>{profileData.profile_name}</b>{`  (#${profileData.profile_id})`}</small><br/>
+                <small>{profileData.profile_type}</small><br/>
+              </div>
+            </div>
             <small>{profileData.profile_summary}</small><br/>
-            <span>If you're seeing this, it means the backend works :-)</span>
+            <small style={{color: 'magenta'}}>If you're seeing this, it means the backend works :-)</small>
           </div>
         }<br/>
+
         <Display />
         <TypeArea />
         <Keyboard>
@@ -116,5 +126,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -1,0 +1,25 @@
+.headermenu {
+    background-color: white;
+    color: blue;
+    width: 100%;
+    height: 60px;
+}
+
+.headermenu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.headermenu ul li {
+    padding: 0.1em 0.5em;
+    font-size: smaller;
+}
+
+.headermenu ul li:hover {
+    background-color: cornflowerblue; 
+    color: white;
+    border-radius: 0.5em;
+    user-select: none;
+}

@@ -2,25 +2,15 @@
  *  Display: screen for typing
  */
 
-import React, {Component} from 'react';
+import React from 'react';
 import Query from "./Query.js";
-import "./styles/Display.css";
+import "./styles/QueryDisplay.css";
 
 let rand = Math.floor(Math.random() * 65536);
 if (rand < 10000) rand += 10000;
 
-class Display extends Component {
-    constructor(props) {
-        super(props);
-        this.id = props.id;
-    }
-    render() {
-        return (
-            <>
-                <Query seed={rand}/>
-            </>
-        );
-    }
+export default function Display() {
+    return <div className="queryDisplay">
+        <Query seed={rand} />
+    </div>
 }
-
-export default Display;

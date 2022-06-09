@@ -1,8 +1,10 @@
 .typearea {
-    width: 600px;
+    width: 480px;
     height: 75px;
     background-color: white;
     border: 1px solid black;
     resize: none;
+    justify-content: center;
     font-size: 1em;
+    margin: 0 1em;
 }

@@ -2,11 +2,14 @@
  *  TypeArea: textbox to type words
  */
 
-import React from 'react';
+import React, { Component }from 'react';
 import "./styles/TypeArea.css";
 
-function TypeArea() {
-    return <textarea className="typearea" placeholder="Enter text here..."/>
+export default class TypeArea extends Component {
+    render() {
+        return (
+            <textarea disabled={(this.props.queryToText) ? false : true}
+                className="typearea" placeholder="Start typing..."/>
+        );
+    }
 }
-
-export default TypeArea;

@@ -1,13 +1,14 @@
 from nltk.corpus import words
-import random
+from random import sample
 
 from flask import Blueprint
 word_api = Blueprint('word_api', __name__)
 
-LIMIT = 15
+LIMIT = 50
+return_words = " ".join(sample(words.words(), LIMIT))
 
 @word_api.route("/words")
 def get_words():
     return {
-        "words": " ".join(random.sample(words.words(), LIMIT))
+        "words": return_words
     }

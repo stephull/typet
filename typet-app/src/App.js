@@ -5,7 +5,6 @@ import axios from 'axios';
 import HeaderMenu from "./Components/HeaderMenu.js";
 import Keyboard from "./Components/Keyboard.js";
 import Key from "./Components/Key.js";
-import TypeArea from "./Components/TypeArea.js";
 import Display from "./Components/Display.js";
 import Scoreboard from "./Components/Scoreboard.js";
 
@@ -41,7 +40,7 @@ export default function App() {
         {(getData() || profileData) &&
           <div style={{
             backgroundColor: 'azure',
-            borderRadius: '2em',
+            borderRadius: '1em',
             border: '5px solid black',
             color: 'black'
           }}>
@@ -62,7 +61,6 @@ export default function App() {
         }<br/>
 
         <Display />
-        <TypeArea />
         <Keyboard>
             <Key code="1-1-1" id="tilde" />
             <Key code="1-1-2">1</Key>

@@ -5,3 +5,15 @@
     background-color: #e6e69e;
     color: black;
 }
+
+.showButton {
+    margin: 1em 0;
+    font-size: 0.75em;
+    border-radius: 0.5em;
+    color: white;
+    background-color: cornflowerblue;
+}
+
+.showButton:hover {
+    background-color: rgba(0, 0, 255, 0.742);
+}

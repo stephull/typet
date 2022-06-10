@@ -4,7 +4,7 @@
 
 import React from 'react';
 import Query from "./Query.js";
-import "./styles/QueryDisplay.css";
+import "./styles/Query.css";
 
 let rand = Math.floor(Math.random() * 65536);
 if (rand < 10000) rand += 5000;

@@ -3,14 +3,14 @@
  */
 
 import React, {Component} from 'react';
+import "./styles/File.css";
 
-class FileInfo extends Component {
+export default class FileInfo extends Component {
     render() {
-        return (
-            <>
-            </>
+        return(
+            <div>
+                TEST
+            </div>
         );
     }
 }
-
-export default FileInfo;

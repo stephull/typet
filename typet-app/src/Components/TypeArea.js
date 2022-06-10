@@ -3,7 +3,7 @@
  */
 
 import React, { Component }from 'react';
-import "./styles/TypeArea.css";
+import "./styles/Query.css";
 
 export default class TypeArea extends Component {
     render() {

@@ -18,9 +18,9 @@ export default function HeaderMenu() {
                 listStyleType: 'none'
             }}>
                 <li>HOME</li>
+                <li>EXPLORE</li>
                 <li>PROFILE</li>
                 <li>SETTINGS</li>
-                <li>COMMUNITY</li>
                 <li>LOGIN</li>
                 <li onClick={handleCreditsShow}>CREDITS</li>
                 <CreditsDialog show={showModal} onHide={handleCreditsHide}/>
